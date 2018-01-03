@@ -1,6 +1,6 @@
 *.py[cod]
-
+.gitignore
 build
 devel
-
+.idea/
 profile.tmp

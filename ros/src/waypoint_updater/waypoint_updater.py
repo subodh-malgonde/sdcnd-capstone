@@ -42,11 +42,17 @@ class WaypointUpdater(object):
 
     def pose_cb(self, msg):
         # TODO: Implement
-        pass
+        print("Message received on /current_pose")
+        print(type(msg))
 
     def waypoints_cb(self, waypoints):
         # TODO: Implement
-        pass
+        print("Message received on /base_waypoints")
+        print(type(waypoints))
+        print("---------------")
+        print(waypoints[0])
+        print("---------------")
+        print(waypoints[1])
 
     def traffic_cb(self, msg):
         # TODO: Callback for /traffic_waypoint message. Implement
