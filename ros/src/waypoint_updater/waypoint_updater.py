@@ -50,9 +50,9 @@ class WaypointUpdater(object):
         print("Message received on /base_waypoints")
         print(type(waypoints))
         print("---------------")
-        print(waypoints[0])
+        print(waypoints.waypoints[0])
         print("---------------")
-        print(waypoints[1])
+        print(waypoints.waypoints[1])
 
     def traffic_cb(self, msg):
         # TODO: Callback for /traffic_waypoint message. Implement
