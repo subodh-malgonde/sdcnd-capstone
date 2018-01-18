@@ -4,3 +4,4 @@ build
 devel
 .idea/
 profile.tmp
+.DS_Store
