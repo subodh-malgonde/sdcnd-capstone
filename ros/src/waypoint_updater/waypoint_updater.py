@@ -24,6 +24,9 @@ TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 
 LOOKAHEAD_WPS = 200 # Number of waypoints we will publish. You can change this number
+TARGET_SPEED_MPH = 10 # miles per hour
+TARGET_SPEED_KPH = TARGET_SPEED_MPH*1.609344 # km per hour
+TARGET_SPEED_MPS = 1000*TARGET_SPEED_KPH/3600 # meters per second
 
 
 class WaypointUpdater(object):
@@ -58,7 +61,7 @@ class WaypointUpdater(object):
                 next_waypoints = self.base_waypoints[self.last_waypoint_index:self.last_waypoint_index+LOOKAHEAD_WPS]
 
             for i in range(len(next_waypoints)):
-                self.set_waypoint_velocity(next_waypoints, i, 10)
+                self.set_waypoint_velocity(next_waypoints, i, TARGET_SPEED_MPS)
 
             waypoint_x = self.base_waypoints[self.last_waypoint_index].pose.pose.position.x
             waypoint_y = self.base_waypoints[self.last_waypoint_index].pose.pose.position.y
